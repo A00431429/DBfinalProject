@@ -20,10 +20,8 @@ namespace dbproject.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult NotFound()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

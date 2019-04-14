@@ -9,9 +9,9 @@
 
 namespace dbproject
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_author
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +19,15 @@ namespace dbproject
         {
             this.p_author_articles = new HashSet<p_author_articles>();
         }
-    
+        [DisplayName("Author ID")]
         public int C_id { get; set; }
+        [DisplayName("Last Name")]
         public string lname { get; set; }
+        [DisplayName("First Name")]
         public string fname { get; set; }
+        [DisplayName("Email")]
         public string email { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<p_author_articles> p_author_articles { get; set; }
     }

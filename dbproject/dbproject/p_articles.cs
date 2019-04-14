@@ -11,7 +11,8 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_articles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,15 @@ namespace dbproject
         {
             this.p_author_articles = new HashSet<p_author_articles>();
         }
-    
+        [DisplayName("Article ID")]
         public int article_id { get; set; }
+        [DisplayName("Title")]
         public string title { get; set; }
+        [DisplayName("Page No")]
         public string page_no { get; set; }
+        [DisplayName("Publication ID")]
         public Nullable<int> publication_id { get; set; }
-    
+
         public virtual p_publication p_publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<p_author_articles> p_author_articles { get; set; }

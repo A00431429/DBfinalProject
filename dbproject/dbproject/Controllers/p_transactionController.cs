@@ -102,6 +102,9 @@ namespace dbproject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             p_transaction p_transaction = db.p_transaction.Find(id);
+            if (p_transaction.date < (DateTime.Today).AddDays(-30)) {
+                ViewBag.ErrorMessage = "Cannot delete transaction as it is older than 30 days";
+            }
             if (p_transaction == null)
             {
                 return HttpNotFound();

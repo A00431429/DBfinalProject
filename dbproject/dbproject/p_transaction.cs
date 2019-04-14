@@ -11,7 +11,8 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_transaction
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,15 @@ namespace dbproject
         {
             this.p_purchase = new HashSet<p_purchase>();
         }
-    
+        [DisplayName("Transaction ID")]
         public int transaction_id { get; set; }
+        [DisplayName("Total Price")]
         public Nullable<float> total_price { get; set; }
+        [DisplayName("Discount Code")]
         public Nullable<int> discount_code { get; set; }
+        [DisplayName("Date")]
         public System.DateTime date { get; set; }
+        [DisplayName("Customer ID")]
         public int cid { get; set; }
     
         public virtual p_customer p_customer { get; set; }

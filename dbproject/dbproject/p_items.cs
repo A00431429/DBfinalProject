@@ -11,7 +11,8 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_items
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,9 @@ namespace dbproject
         {
             this.p_purchase = new HashSet<p_purchase>();
         }
-    
+        [DisplayName("Item ID")]
         public long C_id { get; set; }
+        [DisplayName("Price")]
         public float price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

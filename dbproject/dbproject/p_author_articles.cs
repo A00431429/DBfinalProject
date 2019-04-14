@@ -11,11 +11,15 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_author_articles
     {
+        [DisplayName("Author ID")]
         public Nullable<int> author_id { get; set; }
+        [DisplayName("Article ID")]
         public Nullable<int> article_id { get; set; }
+        [DisplayName("ID")]
         public int C_id { get; set; }
     
         public virtual p_articles p_articles { get; set; }

@@ -18,6 +18,9 @@
         <th>
             @Html.DisplayNameFor(model => model.p_author.lname)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_author.fname)
+        </th>
         <th></th>
     </tr>
 
@@ -30,9 +33,12 @@
             @Html.DisplayFor(modelItem => item.p_author.lname)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.C_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.C_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.C_id })
+            @Html.DisplayFor(modelItem => item.p_author.fname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.C_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.C_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.C_id })
         </td>
     </tr>
 }

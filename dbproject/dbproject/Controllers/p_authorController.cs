@@ -48,13 +48,13 @@ namespace dbproject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "C_id,lname,fname,email")] p_author p_author)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !db.p_author.Where(item => item.fname == p_author.fname && item.lname == p_author.lname).Any())
             {
                 db.p_author.Add(p_author);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.ErrorMessage = "This user already exists";
             return View(p_author);
         }
 

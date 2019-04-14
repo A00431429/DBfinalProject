@@ -11,7 +11,8 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_publication
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,13 @@ namespace dbproject
         {
             this.p_articles = new HashSet<p_articles>();
         }
-    
+        [DisplayName("Publication ID")]
         public int publication_id { get; set; }
+        [DisplayName("Volume Number")]
         public int volume_number { get; set; }
+        [DisplayName("Published Date")]
         public Nullable<System.DateTime> published_date { get; set; }
+        [DisplayName("Magazine ID")]
         public Nullable<int> magazine_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

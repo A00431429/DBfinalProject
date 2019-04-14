@@ -11,7 +11,8 @@ namespace dbproject
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class p_customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +20,21 @@ namespace dbproject
         {
             this.p_transaction = new HashSet<p_transaction>();
         }
-    
+        [DisplayName("Customer ID")]
         public int cid { get; set; }
+        [DisplayName("First Name")]
         public string fname { get; set; }
+        [DisplayName("Last Name")]
         public string lname { get; set; }
+        [DisplayName("Telephone")]
         public Nullable<int> telephone { get; set; }
+        [DisplayName("Street No")]
         public Nullable<int> streetNo { get; set; }
+        [DisplayName("Street Name")]
         public string street_name { get; set; }
+        [DisplayName("#Apt")]
         public Nullable<int> apt_no { get; set; }
+        [DisplayName("Zip Code")]
         public string zipcode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
